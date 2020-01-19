@@ -1,0 +1,25 @@
+# ----- JELLYFIN  -----
+function jellyfin-start {
+    sudo systemctl start jellyfin.service
+}
+
+function jellyfin-stop {
+    sudo systemctl stop jellyfin.service
+}
+
+function jellyfin-status {
+    sudo systemctl status jellyfin.service
+}
+
+function jellyfin-restart {
+    sudo systemctl restart jellyfin.service
+}
+
+function jellyfin-enable {
+    sudo systemctl enable jellyfin.service
+}
+
+function jellyfin-disable {
+    sudo systemctl disable jellyfin.service
+}
+

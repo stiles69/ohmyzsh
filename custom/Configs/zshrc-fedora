@@ -1,0 +1,183 @@
+# ============ CUSTOM ============
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM="$HOME/oh_my_zsh/custom"
+
+# ============= USE J4 ON BUILDS ===========
+export MAKEFLAGS="-j$(getconf _NPROCESSORS_ONLN)"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    nvm
+    beet clamscan git rsync sysctl
+)
+
+# ===== TWILIO =====
+export TWILIO_NUMBER="+16414589734"
+export TWILIO_PHONE="$TWILIO_NUMBER"
+export TWILIO_ACCOUNT_SID="ACcced7f4313b1d036ecd06fd70a05e27e"
+export TWILIO_AUTH_TOKEN="c019a03416fd1ea4875c797dc1ba8a31"
+export SECONDPHONE="+16412432650"
+
+# ===== THOMAS IP =====
+export TOMIP=98.21.141.223
+
+# ===== MEDIACOM IP =====
+#export MEDIACOM=$($BIN/display/Display-IP.sh)
+
+# ===== BIN DIR ====
+export BIN=$HOME/GitLab/bin
+
+# ===== TOTRANSCODE DIR =====
+export TO=$HOME/ToTranscode
+
+# ======== FLUTTER ========
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+# ======== Selenium Drivers  ========
+export PATH=$HOME/bin/selenium_drivers:$PATH
+
+# =========== BEETS ============
+export BEETSDIR=$BIN/beets/config/beets
+
+#=== AUTOLOADS ===
+#==	ZSH Autoloads Added by Brett Salemink ==
+autoload zmv
+alias zmv='noglob zmv -C'
+#alias zcp='noglob zmv -C'
+#alias zln='noglob zmv -L'
+#alias zsy='noglob zmv -Ls'
+
+# ==== PIC DIR ===
+export PICS=/mnt/media/Pictures
+
+# ===== MUSIC DIR ====
+export MUSIC=/mnt/media/Music
+
+# GITLAB ACCESS TOKEN
+export GITLAB_COM_TOKEN='N-x_U5F4ytrMYnXNfaAG'
+
+#== SET MEGA_MEDIA ===
+export MEGA_MEDIA=mega:Media/Video
+
+#=== SET MEDIA_HOME ===
+export MEDIA_HOME=/mnt/media/Video
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/GitLab/bin/inpath:$PATH
+export PATH=$HOME/GitLab/bin/inpath/fedora:$PATH
+export PATH=$HOME/GitLab/bin/fslint/fslint:$PATH
+export PATH=$HOME/lib/sh:$PATH
+
+# PATH for SNAP
+export PATH=/var/lib/snapd/snap/bin:$PATH
+
+# PATH TO Python Programs
+export PATH=$HOME/.local/bin:$PATH
+
+# TEMP PATH
+export PATH=$HOME/.local/lib/python3.7/site-packages/yt-search:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Path to golang
+export PATH=$PATH:/usr/local/go/bin
+
+# Path to Go
+export GOPATH=$HOME/go
+
+# Path to GoBin
+export GOBIN=$HOME/go/bin
+
+# Path to User GoLang
+export PATH=$PATH:$GOBIN
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+#== Added for NVM ==
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#=== THEMES ===
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="Soliah"
+#ZSH_THEME="refined"
+
+#=== OH-MY-ZSH ===
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+
+#=== USER CONFIGURATION ===
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
+
+# Compilation flags do not use for Raspberry Pi ARCH ONLY
+# export ARCHFLAGS="-arch x86_64"
+
+#======= ALIASES ========
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+
+#====== SOURCES =======
+# ZSH
+source $ZSH/oh-my-zsh.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/brettsalemink/google-cloud-sdk/path.zsh.inc' ]; then . '/home/brettsalemink/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/brettsalemink/google-cloud-sdk/completion.zsh.inc'; fi
+

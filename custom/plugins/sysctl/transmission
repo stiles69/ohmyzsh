@@ -1,0 +1,24 @@
+# ----- TRANSMISSION  -----
+function t-start {
+    sudo systemctl start transmission-daemon.service
+}
+
+function t-stop {
+    sudo systemctl stop transmission-daemon.service
+}
+
+function t-status {
+    sudo systemctl status transmission-daemon.service
+}
+
+function t-restart {
+    sudo systemctl restart transmission-daemon.service
+}
+
+function t-enable {
+    sudo systemctl enable transmission-daemon.service
+}
+
+function t-disable {
+    sudo systemctl disable transmission-daemon.service
+}

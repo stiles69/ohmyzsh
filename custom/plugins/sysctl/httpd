@@ -1,0 +1,25 @@
+# ----- HTTPD  -----
+function httpd-start {
+    sudo systemctl start httpd.service
+}
+
+function httpd-stop {
+    sudo systemctl stop httpd.service
+}
+
+function httpd-status {
+    sudo systemctl status httpd.service
+}
+
+function httpd-restart {
+    sudo systemctl restart httpd.service
+}
+
+function httpd-enable {
+    sudo systemctl enable httpd.service
+}
+
+function httpd-disable {
+    sudo systemctl disable httpd.service
+}
+
