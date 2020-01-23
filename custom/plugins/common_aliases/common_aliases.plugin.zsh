@@ -23,6 +23,12 @@ alias bin="cd /home/brettsalemink/GitLab/bin"
 #==== FUNCTIONS ====
 function tsh { ssh -X $1 -t "tmux -CC attach -t $2 || tmux -CC new -s $2"; } 
 
+function aliases_show ()
+{
+    cat $ZSH_CUSTOM/plugins/common_aliases/common_aliases.plugin.zsh | grep alias
+    wait
+}
+
 function extractor ()
 {
     if [ -f $1 ] ; then
