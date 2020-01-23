@@ -5,6 +5,7 @@ alias c='clear'
 alias cd-b='cd ~/GitLab/bin'
 alias code="/usr/share/code/code"
 alias cs="cd"
+alias dl="cd $HOME/Downloads;wait;ls"
 alias docker='sudo podman'
 alias extract='dtrx -r -v'
 alias h='cd $HOME;clear'
