@@ -180,7 +180,7 @@ export PATH=/var/lib/snapd/snap/bin:$PATH
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     nvm
-    beet clamscan git rsync sysctl common_aliase
+    beet clamscan git rsync sysctl common_aliases
 )
 
 # -------- END LOCAL OH-MY-ZSH CONFIG ----------
