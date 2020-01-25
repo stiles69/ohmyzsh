@@ -1,84 +1,20 @@
-#==== ENVIRONMENT ====
+# ************** UNIVERSAL CONFIG ***************
 
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/oh_my_zsh/custom
+# *********** SET UNIVERSAL USER VARS ***********
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git nvm tmux docker docker-compose
-    rsync
-)
-# ===== BIN =====
+# SET BIN DIR
 export BIN=$HOME/GitLab/bin
 
-
-#=== SET MEDIA_HOME ===
-export MEDIA_HOME=/mnt/media/Video
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin/inpath:$PATH
-export PATH=$HOME/bin/inpath/master:$PATH
-export PATH=$HOME/lib/sh:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-#=== THEMES ===
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="Soliah"
-
-#=== OH-MY-ZSH ===
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-
-#=== USER CONFIGURATION ===
-
-export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
+# SET LANG
 export LANG=en_US.UTF-8
 
+# SET MAKEFLAGS J4 ON BUILDS
+export MAKEFLAGS="-j$(getconf _NPROCESSORS_ONLN)"
+
+# SET MANPATH
+export MANPATH="/usr/local/man:$MANPATH"
+
+# SET SSH_CONNECTION
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -86,17 +22,123 @@ export LANG=en_US.UTF-8
    export EDITOR='vim'
  fi
 
-# Compilation flags do not use for Raspberry Pi ARCH ONLY
-# export ARCHFLAGS="-arch x86_64"
+# SET SSH_KEY_PATH
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-#======= ALIASES ========
+# SET ZSH
+export ZSH=$HOME/.oh-my-zsh
+
+# ********** END SET UNIVERSAL USER VARS ********
+
+# ********** UNIVERSAL OH-MY-ZSH CONFIG *********
+# SET ZSH AUTOLOADS
+#==	ZSH Autoloads Added by Brett Salemink ==
+autoload zmv
+alias zmv='noglob zmv'
+alias zcp='noglob zmv -C'
+alias zln='noglob zmv -L'
+alias zsy='noglob zmv -Ls'
+
+# SET ZSH THEMES
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="Soliah"
+
+# SET OH-MY-ZSH CASE_SENSITIVE
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# SET OH-MY-ZSH HYPHEN_INSENSITIVE
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# SET OH-MY-ZSH DISABLE_AUTO_UPDATE
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# SET OH-MY-ZSH UPDATE_ZSH_DAYS
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# SET OH-MY-ZSH DISABLE_LS_COLORS
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# SET OH-MY-ZSH DISABLE_AUTO_TITLE
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# SET OH-MY-ZSH ENABLE_CORRECTION
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# SET OH-MY-ZSH COMPLETION_WAITING_DOTS
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# SET OH-MY-ZSH DISABLE_UNTRACKED_FILES_DIRTY
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# SET OH-MY-ZSH HIST_STAMPS
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# ******* END UNIVERSAL OH-MY-ZSH CONFIG ********
+
+# ************ END UNIVERSAL CONFIG *************
+
+# =============== LOCAL CONFIGS =================
+
+# --------------- SET USER VARS -----------------
+
+# SET MEDIA_HOME
+export MEDIA_HOME=/mnt/media/Video
+
+# ------------ END SET USER VARS ---------------
+
+# --------------- USER PATHS -------------------
+# PATH CUSTOM
+export PATH=$HOME/GitLab/bin/inpath:$PATH
+export PATH=$HOME/GitLab/bin/inpath/$(hostname):$PATH
+export PATH=$HOME/lib/sh:$PATH
+
+# PATH PYTHON USER
+export PATH=$HOME/.local/bin:$PATH
+
+# --------------- END USER PATHS ----------------
+
+# ----------- LOCAL OH-MY-ZSH CONFIG ------------
+
+# SET PLUGINS
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    nvm
+    git rsync sysctl common_aliases
+)
+
+# -------- END LOCAL OH-MY-ZSH CONFIG ----------
+
+# ============ END LOCAL CONFIGS  ==============
+
+# ================= ALIASES ====================
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+# =============== END ALIASES ==================
 
-#====== SOURCES =======
-# ZSH
+# ================== SOURCES ===================
+# SOURCE ZSH
 source $ZSH/oh-my-zsh.sh
+# ================ END SOURCES =================
 

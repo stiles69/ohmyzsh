@@ -98,6 +98,8 @@ COMPLETION_WAITING_DOTS="true"
 
 # --------------- SET USER VARS -----------------
 
+# SET DL
+export DL=/downloads/aria2/www/html
 # ------------ END SET USER VARS ---------------
 
 # --------------- USER PATHS -------------------
@@ -138,4 +140,5 @@ plugins=(
 # SOURCE ZSH
 source $ZSH/oh-my-zsh.sh
 # ================ END SOURCES =================
+
 
